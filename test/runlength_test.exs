@@ -12,5 +12,6 @@ defmodule RunlengthTest do
 
   test "encodes runs of sequential characters with a single instance of that value preceded by the number of items in the run" do
     assert Runlength.encode("JJ") == "2J"
+    assert Runlength.encode("JJJJJJJJJ") == "9J"
   end
 end
