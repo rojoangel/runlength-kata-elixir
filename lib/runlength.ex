@@ -27,7 +27,8 @@ defmodule Runlength do
   end
 
   defp expand_run(run) do
-    "J"
+    [count, char] = run |> String.codepoints
+    String.duplicate(char, String.to_integer(count))
   end
 
   defp split_in_chunks_of_two_bytes(string) do
