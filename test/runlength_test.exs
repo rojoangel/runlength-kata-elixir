@@ -17,5 +17,6 @@ defmodule RunlengthTest do
 
   test "encodes runs of different characters" do
     assert Runlength.encode("JJMMM") == "2J3M"
+    assert Runlength.encode("JJJTTWPPMMMMYYYYYYYYYVVVVVV") == "3J2T1W2P4M9Y6V"
   end
 end
