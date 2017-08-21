@@ -21,7 +21,7 @@ defmodule Runlength do
   def decode(string) do
      case string |> split_in_chunks_of_two_bytes do
        [] -> ""
-       runs -> runs |> Enum.map(&expand_run/1) |> Enum.reduce(&(&1 <> &2))
+       runs -> runs |> Enum.map(&expand_run/1) |> Enum.reduce(&(&2 <> &1))
      end
      
   end

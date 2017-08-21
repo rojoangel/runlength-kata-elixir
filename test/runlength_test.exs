@@ -28,4 +28,8 @@ defmodule RunlengthTest do
     assert Runlength.decode("1J") == "J"
     assert Runlength.decode("2J") == "JJ"
   end
+
+  test "decodes multiple runs" do
+    assert Runlength.decode("3J2T1W2P4M9Y6V") == "JJJTTWPPMMMMYYYYYYYYYVVVVVV"
+  end
 end
