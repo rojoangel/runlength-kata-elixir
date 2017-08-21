@@ -1,18 +1,5 @@
 defmodule Runlength do
-  @moduledoc """
-  Documentation for Runlength.
-  """
-
-  @doc """
-  Hello world.
-
-  ## Examples
-
-      iex> Runlength.hello
-      :world
-
-  """
-  def hello do
-    :world
+  def encode(string) do
+    ""
   end
 end
