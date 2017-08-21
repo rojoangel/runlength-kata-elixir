@@ -2,7 +2,7 @@ defmodule RunlengthTest do
   use ExUnit.Case
   doctest Runlength
 
-  test "does nothing for empty string" do
+  test "encodes nothing for empty string" do
     assert Runlength.encode("") == ""
   end
 
@@ -18,5 +18,9 @@ defmodule RunlengthTest do
   test "encodes runs of different characters" do
     assert Runlength.encode("JJMMM") == "2J3M"
     assert Runlength.encode("JJJTTWPPMMMMYYYYYYYYYVVVVVV") == "3J2T1W2P4M9Y6V"
+  end
+
+  test "decodes nothing for empty string" do
+    assert Runlength.decode("") == ""
   end
 end
