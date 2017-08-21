@@ -23,4 +23,8 @@ defmodule RunlengthTest do
   test "decodes nothing for empty string" do
     assert Runlength.decode("") == ""
   end
+
+  test "decodes single run" do
+    assert Runlength.decode("1J") == "J"
+  end
 end

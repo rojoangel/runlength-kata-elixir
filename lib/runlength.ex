@@ -19,6 +19,18 @@ defmodule Runlength do
   end
 
   def decode(string) do
-    ""
+     case string |> split_in_chunks_of_two_bytes do
+       [] -> ""
+       runs -> runs |> Enum.map(&expand_run/1) |> Enum.reduce(&(&1 <> &2))
+     end
+     
+  end
+
+  defp expand_run(run) do
+    "J"
+  end
+
+  defp split_in_chunks_of_two_bytes(string) do
+    for <<x::binary-2 <- string>>, do: x
   end
 end
