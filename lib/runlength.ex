@@ -22,8 +22,7 @@ defmodule Runlength do
      case string |> split_in_chunks_of_two_bytes do
        [] -> ""
        runs -> runs |> Enum.map(&expand_run/1) |> Enum.reduce(&(&2 <> &1))
-     end
-     
+     end    
   end
 
   defp expand_run(run) do
