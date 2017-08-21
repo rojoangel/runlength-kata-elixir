@@ -13,4 +13,8 @@ defmodule Runlength do
   defp encode_chars(count, char, [char | more_chars]) do
     encode_chars(count + 1, char, more_chars)
   end
+
+  defp encode_chars(count, char, [another_char | more_chars]) do
+    encode_chars(count, char, []) <> encode_chars(1, another_char, more_chars)
+  end
 end
